@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ApiRestApplication {
+public class ApiRestDementeIdeasApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(ApiRestApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(ApiRestDementeIdeasApplication.class, args);
+	}
 
 }
