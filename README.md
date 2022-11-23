@@ -1,7 +1,6 @@
 # API-REST-demente
 
 ### Example with
-
 - Java 11
   - Functional programing
 - Spring Boot
