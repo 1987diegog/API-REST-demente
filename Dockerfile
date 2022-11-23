@@ -1,27 +1,23 @@
-# First stage: complete build environment
-FROM adoptopenjdk/maven-openjdk11 AS builder
-
-# add pom.xml and source code
-ADD ./pom.xml pom.xml
-ADD ./src src/
-
-# package jar
-RUN mvn clean package
-
-# Second stage: minimal runtime environment
-# For Java 11
+# For Java 11, try this
 FROM adoptopenjdk/openjdk11:alpine-jre
 
-# Port expose
 EXPOSE 8080
-
-# cd /opt/app
-WORKDIR /opt/app
 
 # Refer to Maven build -> finalName
 ARG JAR_FILE=target/api-rest-demente-0.0.1-SNAPSHOT.jar
 
-# copy jar from the first stage
-COPY --from=builder ${JAR_FILE} /app/api-rest-demente.jar
+# cd /opt/app
+WORKDIR /opt/app
 
-CMD ["java", "-jar", "/app/api-rest-demente.jar"]
+# cp target/spring-boot-web.jar /opt/app/app.jar
+COPY ${JAR_FILE} /app/api-rest-demente.jar
+
+# java -jar /opt/app/api-rest-demente.jar
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app/api-rest-demente.jar"]
+
+###########################################################
+########### Build Image and Run Docker commands ###########
+###########################################################
+# docker build -t api-rest-demente-v1.0.0 .
+# docker run -it -p 8080:8080 api-rest-demente-v1.0.0
+###########################################################

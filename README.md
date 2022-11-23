@@ -13,15 +13,19 @@
 - Database H2 
 - Test
   - Mockito
-- Gradle 
-- MapStruct 
-- Lombok
+- Maven
+- Libs:
+  - MapStruct 
+  - Lombok
+- Docker
+  - Dockerfile simple
+  - Dockerfile with multistage, build binary and create image
 
 ### Description
 API REST that consulting a database H2 in memory, in the proccess
 get the information with different modes to Query
 
-
+### URL endpoints
 To entry view H2 console:
 http://localhost:8080/h2-console
 
