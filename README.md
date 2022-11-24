@@ -25,9 +25,9 @@ API REST that consulting a database H2 in memory, in the proccess
 get the information with different modes to Query
 
 ### URL endpoints
-To entry view H2 console:
-http://localhost:8080/h2-console
+- H2 console:
+  - http://localhost:8080/h2-console
 
-Swagger-ui
-http://localhost:8080/swagger-ui.html
+- Swagger-ui
+  - http://localhost:8080/swagger-ui.html
 
