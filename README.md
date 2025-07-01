@@ -21,7 +21,7 @@
   - Dockerfile with multistage, build binary and create image
 
 ### Description
-API REST that consulting a database H2 in memory, in the proccess
+API REST that consulting a database H2 in memory, in the process
 get the information with different modes to Query
 
 ### URL endpoints
